@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="{{ url_for('static',  filename='favicon.ico') }}">
+    <title>資訊課作業</title>
+  </head>
+
+  <body>
+  <h1>圖片翻譯</h1>
+  <form action="/ocr" method="POST" enctype="multipart/form-data"  action="{{ url_for('upload_file') }}">
+    <p><input type="file" name="filename"  accept="image/*" required>
+   <select name="language">
+     <option value="zh-tw">繁體中文</option>
+     <option value="en">英文</option>
+     <option value="ja">日文</option>
+   </select></p>
+   <input type="submit" value="翻譯">
+  </form>
+  </body>
+</html>
